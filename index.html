@@ -9,7 +9,7 @@
 
 	<!-- Load font awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	
+
 	<!-- Load fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet">
 
@@ -301,6 +301,27 @@
 				$('.flip-container').not(this).removeClass("hover");
 			}
 
+		});
+
+		$('#mobilenav h2').click(function(){
+			$('#mainnav').slideToggle('slow');
+		});
+
+		function showHideMenu() {
+
+			var viewportWidth = $(window).width();
+
+			if(viewportWidth > 600){
+				$('#mainnav').show();	
+			} else{
+				$('#mainnav').hide();
+			}
+		}
+
+		showHideMenu();
+
+		$( window ).resize(function() {
+			showHideMenu();
 		});
 
 	</script>
